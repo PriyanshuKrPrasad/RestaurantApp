@@ -1,0 +1,263 @@
+/* FormStyles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+
+      background-color: var(--background-color);
+      font-family: var(--default-font);
+      color: var(--default-color);
+      background-color: var(--background-color);
+      font-family: var(--default-font);
+      font-size: var(--default-font-size);
+      line-height: var(--default-line-height);
+      text-align: var(--default-text-align);
+      letter-spacing: var(--default-letter-spacing);
+      word-spacing: var(--default-word-spacing);
+      text-transform: var(--default-text-transform);
+      text-decoration: var(--default-text-decoration);
+      text-shadow: var(--default-text-shadow);
+      box-sizing: var(--default-box-sizing);
+      overflow-x: var(--default-overflow-x);
+      overflow-y: var(--default-overflow-y);
+      cursor: var(--default-cursor);
+    
+
+      background-image: url(https://d3lzcn6mbbadaf.cloudfront.net/media/details/ANI-20240919131303.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+
+  .welcome-text {
+    color: #911010;
+    font-size: 70px;
+    margin-left: 370px;
+    margin-top: 50px;
+    /* font-family: Arial, sans-serif;   */
+    /* animation: fadeIn 3s ease-in-out;   */
+    font-weight: bold;
+}
+
+/* Welcome Image Styling */
+.welcome-image {
+    width: 550px;
+    height: auto;
+    border-radius: 15px;
+    animation: bounce 2s infinite;
+    /* justify-content: center; */
+    margin: 0 auto;
+    display: flex; 
+    /* align-items: center; */
+    margin-top: 70px;
+    /* margin-bottom: 20px; */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+  
+
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-form h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  .login-btn {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  .form-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #4caf4f50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-btn:hover {
+    background-color: #455aa0;
+  }
+
+  .form-group input:hover {
+    border-color: #4c63af;
+    background-color: #f5f5f5;
+  }
+
+  textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+
+
+
+  
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem; /* Adds space between list items */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .navbar ul li a:hover {
+    color: #7aaf4c;
+  }
+
+  .navbar ul li {
+    margin: 0 1rem; /* Adds horizontal space between items */
+    
+  }
+
+  .navbar {
+    padding: 1rem 2rem; /* Adds padding inside the navbar */
+  }
+
+  .navbar {
+    display: flex;
+   justify-content: right;
+  }
+  
+
+  @media (max-width: 768px) {
+    .navbar ul {
+      flex-direction: column; /* Stack items vertically */
+      gap: 1rem; /* Adjust spacing for vertical layout */
+    }
+  }
+  
+
+
+  
+  
+  

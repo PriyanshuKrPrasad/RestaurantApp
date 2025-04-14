@@ -1,16 +1,23 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ← Import useNavigate
 import "../App.css"; // CSS file for styling
 
 function LoginForm() {
+  const navigate = useNavigate(); // ← Initialize navigate
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Simulate successful login
     console.log("Email:", email);
     console.log("Password:", password);
     alert("Login Successful!");
 
+    // Redirect to main page (e.g., homepage or dashboard)
+    navigate("/"); // Change to the route you want after login
   };
 
   return (

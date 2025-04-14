@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Homeimg1 from '../assets/Homeimg1.png';
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Header from './Hearder';
 
 function Home() {
   const [navOpen, setNavOpen] = useState(false);
@@ -12,38 +12,7 @@ function Home() {
 
   return (
     <div>
-      <header id="header" className="header d-flex align-items-center sticky-top">
-        <div className="container position-relative d-flex align-items-center justify-content-between">
-          <a href="index.html" className="logo d-flex align-items-center me-auto me-xl-0">
-            <h1 className="sitename">
-              <span>
-                <img src="src/assets/logo.png" alt="Logo" />
-              </span>
-            </h1>
-          </a>
-
-          {/* Navigation Menu */}
-          <nav id="navmenu" className={`navmenu ${navOpen ? "open" : ""}`}>
-            <ul className={navOpen ? "nav-list active" : "nav-list"}>
-              <li><a href="#home" className="active">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#menu">Menu</a></li>
-              <li><a href="#events">Events</a></li>
-              <li><a href="#chefs">Chefs</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </nav>
-
-          {/* Hamburger Menu Icon */}
-          <div className="hamburger d-xl-none" onClick={toggleNav}>
-            <i className={`bi ${navOpen ? "bi-x" : "bi-list"}`}></i>
-          </div>
-
-          <a className="btn-getstarted" href="/book-table">Book a Table</a>
-        </div>
-      </header>
-
+      <Header />
 
       <main className="main">
         <section id="hero" className="hero section light-background">
@@ -203,10 +172,10 @@ function Home() {
                   {/* Menu Item 6 */}
                   <div className="col-lg-4 menu-item">
                     <a href="src/assets/pngtree-masala-dosa-famous-indian-food-with-traditional-sauce-png-image_11520144.png" className="glightbox">
-                      <img src="src/assets/pngtree-masala-dosa-famous-indian-food-with-traditional-sauce-png-image_11520144.png" className="menu-img img-fluid" alt="Dosha" />
+                      <img src="src/assets/pngtree-masala-dosa-famous-indian-food-with-traditional-sauce-png-image_11520144.png" className="menu-img img-fluid" alt="Dosa" />
                     </a>
-                    <h4>Dosha</h4>
-                    <p className="price">Rs. 18 0/-</p>
+                    <h4>Dosa</h4>
+                    <p className="price">Rs. 180/-</p>
                   </div>
                 </div> {/* End of Row */}
               </div>
@@ -265,45 +234,45 @@ function Home() {
             </div>
           </section>
           {/* Chefs Section */}
-          <section id="chefs" className="chefs section">
-            <div className="container text-center" data-aos="fade-up">
-              <h2>Chefs</h2>
+          <section id="chefs" className="chefs-section">
+            <div className="chefs-container">
+              <h2> Our Chefs</h2>
               <h4>
-                <span>Meet Our </span>
-                <span className="description-title"> Talented and Professional Chefs</span>
+                <span>Meet Our</span>{" "}
+                <span className="description-title">Talented and Professional Chefs</span>
               </h4>
-              <p>
-                Our chefs bring a wealth of experience and creativity to every dish, ensuring an
-                unforgettable dining experience.
+              <p className="chefs-subtext">
+                Our chefs bring a wealth of experience and creativity to every dish,
+                ensuring an unforgettable dining experience.
               </p>
 
-              <div className="horizontal-cards-container">
-                <div className="horizontal-card">
-                  <img src="src/assets/chef1.png" className="card-img-left" alt="Chef Image 1" />
-                  <div className="card-body">
-                    <h5 className="card-title">Chef John Doe</h5>
-                    <p className="card-text">John Doe is a culinary artist with 10+ years of experience creating exceptional dishes.</p>
-                    <a href="#" className="btn btn-primary">View Profile</a>
+              <div className="chefs-cards">
+                {[
+                  {
+                    name: "Chef John Doe",
+                    desc: "John Doe is a culinary artist with 10+ years of experience creating exceptional dishes.",
+                    img: "src/assets/chef1.png",
+                  },
+                  {
+                    name: "Chef Jane Smith",
+                    desc: "Jane specializes in modern fusion cuisine, blending tradition with innovation.",
+                    img: "src/assets/chef2.jpg",
+                  },
+                  {
+                    name: "Chef Alex Brown",
+                    desc: "Alex is a pastry chef known for creating delightful desserts that amaze everyone.",
+                    img: "src/assets/chef3.jpg",
+                  },
+                ].map((chef, index) => (
+                  <div className="chef-card" key={index}>
+                    <img src={chef.img} alt={chef.name} className="chef-img" />
+                    <div className="chef-info">
+                      <h5>{chef.name}</h5>
+                      <p>{chef.desc}</p>
+                      <a href="#" className="view-profile">View Profile →</a>
+                    </div>
                   </div>
-                </div>
-
-                <div className="horizontal-card">
-                  <img src="src/assets/chef2.jpg" className="card-img-left" alt="Chef Image 2" />
-                  <div className="card-body">
-                    <h5 className="card-title">Chef Jane Smith</h5>
-                    <p className="card-text">Jane specializes in modern fusion cuisine, blending tradition with innovation.</p>
-                    <a href="#" className="btn btn-primary">View Profile</a>
-                  </div>
-                </div>
-
-                <div className="horizontal-card">
-                  <img src="src/assets/chef3.jpg" className="card-img-left" alt="Chef Image 3" />
-                  <div className="card-body">
-                    <h5 className="card-title">Chef Alex Brown</h5>
-                    <p className="card-text">Alex is a pastry chef known for creating delightful desserts that amaze everyone.</p>
-                    <a href="#" className="btn btn-primary">View Profile</a>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </section>
@@ -346,11 +315,12 @@ function Home() {
               </div>
               <p>
                 Take a glimpse into our world! Browse our gallery to see highlights of our dishes,
-                events, and ambiance.<br/><span>&</span><br/>Discover the essence of our place! Our gallery showcases the finest dishes, special events, and cozy ambiance.
+                events, and ambiance.<br /><span>&</span><br />Discover the essence of our place! Our gallery showcases the finest dishes, special events, and cozy ambiance.
               </p>
             </div>
           </section>
         </div>
+        {/* {Footer Section} */}
         <footer class="py-5 bg-dark text-white">
           <div class="container">
             <div class="row">

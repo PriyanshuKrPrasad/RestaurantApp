@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import "../App.css"; // Shared CSS file for all forms
+import { useNavigate } from "react-router-dom"; // ← Import useNavigate
+import "../App.css";
 
 function SignupForm() {
+  const navigate = useNavigate(); // ← Initialize the navigate function
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,15 +18,20 @@ function SignupForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Simulate successful signup
     console.log("Signup Data:", formData);
     alert("Signup Successful!");
+
+    // Redirect to login page
+    navigate("/login");
   };
 
   return (
     <div className="form-container">
       <form className="form" onSubmit={handleSubmit}>
         <h2>Signup</h2>
-        
+
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
@@ -36,6 +44,7 @@ function SignupForm() {
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
@@ -44,10 +53,11 @@ function SignupForm() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Enter     your email"
+            placeholder="Enter your email"
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="password">Password</label>
           <input
@@ -60,6 +70,7 @@ function SignupForm() {
             required
           />
         </div>
+
         <button type="submit" className="form-btn">
           Signup
         </button>

@@ -2,7 +2,7 @@
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://PriyanshuKrPasad.github.io/BookMyTable",
+  "homepage": "https://github.com/PriyanshuKrPrasad/RestaurantApp.git",
   "type": "module",
   "scripts": {
     "dev": "vite",

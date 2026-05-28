@@ -184,7 +184,7 @@ const Header = () => {
           {/* LOGO */}
           <div style={logoWrapper}>
             <img
-              src="src/assets/logo.png"
+              src="/logo.png"
               alt="Logo"
               style={logoStyle}
             />

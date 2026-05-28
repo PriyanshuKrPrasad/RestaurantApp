@@ -12,13 +12,14 @@ function App() {
   return (
     <AnimatePresence mode="">
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <div>
         
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<LoginForm />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/book-table" element={<BookTableForm />} />
         <Route path="/contact" element={<ContactForm />} />
         </Routes>     

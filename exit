@@ -1,0 +1,59 @@
+[33mcommit f8f3661fc84525951a37807a7af9996e60e2e165[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Himanshu Prasad <priyanshukp224@gmail.com>
+Date:   Tue Apr 15 11:28:21 2025 +0530
+
+    Updated latest changes
+
+[33mcommit c1034bbe40bb559cea524b20baae5a44005ac6e2[m
+Author: Himanshu Prasad <priyanshukp224@gmail.com>
+Date:   Tue Apr 15 11:26:31 2025 +0530
+
+    Update .gitignore
+
+[33mcommit 5d51de281455afd6f3afaca055476d4b769da2e7[m
+Author: Himanshu Prasad <priyanshukp224@gmail.com>
+Date:   Tue Apr 15 10:54:40 2025 +0530
+
+    fix: install vite and update config
+
+[33mcommit 07b090b83a00fc8d63b57cd474b39c236d339775[m
+Author: Himanshu Prasad <priyanshukp224@gmail.com>
+Date:   Tue Apr 15 01:42:56 2025 +0530
+
+    fix: updated to vite build for vercel
+
+[33mcommit 52a86d222c38d055f8cf186cc9848c4ba324c6e0[m
+Author: Himanshu Prasad <priyanshukp224@gmail.com>
+Date:   Tue Apr 15 01:24:01 2025 +0530
+
+    Updated code and fixed build issue
+
+[33mcommit 95f40be0f4bea1d88887dcddccaae4e63d8b6cca[m
+Author: Himanshu Prasad <priyanshukp224@gmail.com>
+Date:   Tue Apr 15 01:08:15 2025 +0530
+
+    Updated latest changes
+
+[33mcommit 00b5d395c46c836360ba19b027bc601f529f0817[m
+Author: Himanshu Prasad <priyanshukp224@gmail.com>
+Date:   Tue Apr 15 01:02:38 2025 +0530
+
+    Force redeploy
+
+[33mcommit 6771a3b7fa259197eda4a2abe020657c3733e6bf[m
+Author: Himanshu Prasad <priyanshukp224@gmail.com>
+Date:   Mon Apr 14 20:50:17 2025 +0530
+
+    Remove node_modules from tracking
+
+[33mcommit 965a4766387f61a9a5ec06bddd9f76cb80aeffbc[m
+Author: Himanshu Prasad <priyanshukp224@gmail.com>
+Date:   Tue Feb 4 01:50:14 2025 +0530
+
+    Fix image paths
+
+[33mcommit c31c94a6a67a1f4bae9e97b6add7d1333a99ec95[m
+Author: Himanshu Prasad <priyanshukp224@gmail.com>
+Date:   Tue Feb 4 01:10:28 2025 +0530
+
+    Deploy to GitHub Pages

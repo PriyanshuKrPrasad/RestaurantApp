@@ -15,14 +15,24 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     console.log("Contact Data:", formData);
+
     alert("Message sent successfully!");
+
+    // Reset form after submit
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
     <div className="form-container">
       <form className="form" onSubmit={handleSubmit}>
         <h2>Contact Us</h2>
+
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
@@ -35,6 +45,7 @@ function ContactForm() {
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
@@ -47,6 +58,7 @@ function ContactForm() {
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="message">Message</label>
           <textarea
@@ -59,6 +71,7 @@ function ContactForm() {
             required
           />
         </div>
+
         <button type="submit" className="form-btn">
           Send Message
         </button>

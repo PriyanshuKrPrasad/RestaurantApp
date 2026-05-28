@@ -1,263 +1,494 @@
-/* FormStyles.css */
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
+  background: #fff8f0;
+}
 
-      background-color: var(--background-color);
-      font-family: var(--default-font);
-      color: var(--default-color);
-      background-color: var(--background-color);
-      font-family: var(--default-font);
-      font-size: var(--default-font-size);
-      line-height: var(--default-line-height);
-      text-align: var(--default-text-align);
-      letter-spacing: var(--default-letter-spacing);
-      word-spacing: var(--default-word-spacing);
-      text-transform: var(--default-text-transform);
-      text-decoration: var(--default-text-decoration);
-      text-shadow: var(--default-text-shadow);
-      box-sizing: var(--default-box-sizing);
-      overflow-x: var(--default-overflow-x);
-      overflow-y: var(--default-overflow-y);
-      cursor: var(--default-cursor);
-    
+/* Main Container */
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+}
 
-      background-image: url(https://d3lzcn6mbbadaf.cloudfront.net/media/details/ANI-20240919131303.jpg);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+/* Left Image Section */
+.auth-image {
+  flex: 1;
+  background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200")
+    center/cover no-repeat;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  color: white;
+}
+
+.overlay h1 {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.overlay p {
+  font-size: 20px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Right Form Section */
+.auth-form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 40px;
+}
+
+/* Form Card */
+.auth-form {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form h2 {
+  font-size: 35px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.subtitle {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* Input Fields */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #ff6b35;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.2);
+}
+
+/* Button */
+.auth-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #ff6b35;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background: #e85a2a;
+  transform: translateY(-2px);
+}
+
+/* Switch Text */
+.switch-text {
+  margin-top: 20px;
+  text-align: center;
+  color: #666;
+}
+
+.switch-text a {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .auth-container {
+    flex-direction: column;
   }
 
-  .welcome-text {
-    color: #911010;
-    font-size: 70px;
-    margin-left: 370px;
-    margin-top: 50px;
-    /* font-family: Arial, sans-serif;   */
-    /* animation: fadeIn 3s ease-in-out;   */
-    font-weight: bold;
+  .auth-image {
+    height: 300px;
+  }
+
+  .overlay h1 {
+    font-size: 40px;
+  }
+
+  .auth-form {
+    padding: 30px;
+  }
 }
 
-/* Welcome Image Styling */
-.welcome-image {
-    width: 550px;
-    height: auto;
-    border-radius: 15px;
-    animation: bounce 2s infinite;
-    /* justify-content: center; */
-    margin: 0 auto;
-    display: flex; 
-    /* align-items: center; */
-    margin-top: 70px;
-    /* margin-bottom: 20px; */
+
+/* =========================
+   BOOKING SECTION
+========================= */
+
+.booking-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
 }
 
-/* Fade-in Animation */
+/* LEFT IMAGE SIDE */
+.booking-image {
+  flex: 1;
+  background: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200")
+    center/cover no-repeat;
+  position: relative;
+  animation: zoomBg 15s infinite alternate ease-in-out;
+}
+
+.booking-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px;
+}
+
+.booking-overlay h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+  animation: slideDown 1s ease;
+}
+
+.booking-overlay p {
+  font-size: 20px;
+  line-height: 1.7;
+  max-width: 500px;
+  animation: fadeIn 2s ease;
+}
+
+/* RIGHT FORM SIDE */
+.booking-form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff8f2;
+  padding: 40px;
+}
+
+/* FORM CARD */
+.booking-form {
+  width: 100%;
+  max-width: 550px;
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  animation: formPop 0.8s ease;
+}
+
+.booking-form h2 {
+  font-size: 38px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.booking-subtitle {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* SUCCESS MESSAGE */
+.success-message {
+  background: #28a745;
+  color: white;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* ROWS */
+.input-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid #eee;
+  border-radius: 14px;
+  font-size: 15px;
+  transition: 0.3s;
+  background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #ff6b35;
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.2);
+  transform: translateY(-2px);
+  background: white;
+}
+
+/* BUTTON */
+.booking-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff6b35, #ff914d);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.booking-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+}
+
+/* ANIMATIONS */
+@keyframes formPop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomBg {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-/* Bounce Animation */
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-  
+/* RESPONSIVE */
+@media (max-width: 950px) {
+  .booking-container {
+    flex-direction: column;
+  }
 
-  .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  .booking-image {
+    height: 350px;
   }
-  
-  .login-form {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+
+  .booking-overlay h1 {
+    font-size: 42px;
   }
-  
-  .login-form h2 {
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    color: #333;
-    text-align: center;
+
+  .input-row {
+    flex-direction: column;
+    gap: 0;
   }
-  
-  .form-group {
-    margin-bottom: 1.2rem;
+
+  .booking-form {
+    padding: 30px;
   }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #555;
-    font-weight: 500;
+}
+
+/* =========================
+   CONTACT FORM SECTION
+========================= */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff8f2, #ffe8dc);
+  font-family: "Poppins", sans-serif;
+  padding: 40px;
+  overflow: hidden;
+}
+
+/* FORM CARD */
+.form {
+  width: 100%;
+  max-width: 550px;
+  background: white;
+  padding: 45px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  animation: formPop 0.8s ease;
+  position: relative;
+}
+
+/* HEADING */
+.form h2 {
+  font-size: 40px;
+  color: #222;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form h2::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #ff6b35, #ff914d);
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
+
+/* FORM GROUP */
+.form-group {
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* INPUTS & TEXTAREA */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid #eee;
+  border-radius: 14px;
+  font-size: 15px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  resize: none;
+}
+
+/* FOCUS EFFECT */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ff6b35;
+  outline: none;
+  background: white;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.2);
+  transform: translateY(-2px);
+}
+
+/* PLACEHOLDER */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa;
+}
+
+/* BUTTON */
+.form-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff6b35, #ff914d);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+/* BUTTON HOVER */
+.form-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+}
+
+/* ANIMATIONS */
+@keyframes formPop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
-  
-  .form-group input {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    transition: 0.3s;
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .form-group input:focus {
-    border-color: #4caf50;
-    outline: none;
-  }
-  
-  .login-btn {
-    display: block;
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background-color: #4caf50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .login-btn:hover {
-    background-color: #45a049;
-  }
-  
-  .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
   .form {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 1.5rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1.2rem;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #555;
-  }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  input:focus,
-  textarea:focus {
-    outline: none;
-    border-color: #4caf50;
-  }
-  
-  textarea {
-    resize: none;
-  }
-  
-  .form-btn {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    color: white;
-    background-color: #4caf4f50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .form-btn:hover {
-    background-color: #455aa0;
+    padding: 30px;
   }
 
-  .form-group input:hover {
-    border-color: #4c63af;
-    background-color: #f5f5f5;
+  .form h2 {
+    font-size: 32px;
   }
 
-  textarea::placeholder {
-    color: #aaa;
-    font-style: italic;
+  .form-container {
+    padding: 20px;
   }
-
-
-
-  
-  
-  .navbar ul {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem; /* Adds space between list items */
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  .navbar ul li a:hover {
-    color: #7aaf4c;
-  }
-
-  .navbar ul li {
-    margin: 0 1rem; /* Adds horizontal space between items */
-    
-  }
-
-  .navbar {
-    padding: 1rem 2rem; /* Adds padding inside the navbar */
-  }
-
-  .navbar {
-    display: flex;
-   justify-content: right;
-  }
-  
-
-  @media (max-width: 768px) {
-    .navbar ul {
-      flex-direction: column; /* Stack items vertically */
-      gap: 1rem; /* Adjust spacing for vertical layout */
-    }
-  }
-  
-
-
-  
-  
-  
+}

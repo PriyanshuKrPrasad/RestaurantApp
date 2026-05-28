@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // ← Import useNavigate
-import "../App.css"; // CSS file for styling
+import { Link, useNavigate } from "react-router-dom";
+import "../App.css";
 
 function LoginForm() {
-  const navigate = useNavigate(); // ← Initialize navigate
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,45 +11,58 @@ function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Simulate successful login
-    console.log("Email:", email);
-    console.log("Password:", password);
+    console.log(email, password);
     alert("Login Successful!");
 
-    // Redirect to main page (e.g., homepage or dashboard)
-    navigate("/"); // Change to the route you want after login
+    navigate("/home");
   };
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
-            required
-          />
+    <div className="auth-container">
+      {/* Left Side */}
+      <div className="auth-image">
+        <div className="overlay">
+          <h1>🍔 Foodie Hub</h1>
+          <p>Delicious food delivered to your doorstep</p>
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter your password"
-            required
-          />
-        </div>
-        <button type="submit" className="login-btn">
-          Login
-        </button>
-      </form>
+      </div>
+
+      {/* Right Side */}
+      <div className="auth-form-section">
+        <form className="auth-form" onSubmit={handleSubmit}>
+          <h2>Welcome Back 👋</h2>
+          <p className="subtitle">Login to continue ordering</p>
+
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+
+          <button type="submit" className="auth-btn">
+            Login
+          </button>
+
+          <p className="switch-text">
+            Don’t have an account?
+            <Link to="/signup"> Signup</Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 }

@@ -8,9 +8,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       {/* Logo */}
-      <Link to="/" className="navbar-logo" onClick={() => setIsOpen(false)}>
+      {/* <Link to="/" className="navbar-logo" onClick={() => setIsOpen(false)}>
         <span>eXplore</span>
-      </Link>
+      </Link> */}
 
       {/* Hamburger Toggle Button */}
       <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>

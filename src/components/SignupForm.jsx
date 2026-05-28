@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // ← Import useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 
 function SignupForm() {
-  const navigate = useNavigate(); // ← Initialize the navigate function
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -12,69 +12,80 @@ function SignupForm() {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Simulate successful signup
-    console.log("Signup Data:", formData);
+    console.log(formData);
     alert("Signup Successful!");
 
-    // Redirect to login page
     navigate("/login");
   };
 
   return (
-    <div className="form-container">
-      <form className="form" onSubmit={handleSubmit}>
-        <h2>Signup</h2>
-
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Enter your name"
-            required
-          />
+    <div className="auth-container">
+      {/* Left Side */}
+      <div className="auth-image">
+        <div className="overlay">
+          <h1>🍕 Foodie Hub</h1>
+          <p>Fresh meals, fast delivery, happy moments</p>
         </div>
+      </div>
 
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Enter your email"
-            required
-          />
-        </div>
+      {/* Right Side */}
+      <div className="auth-form-section">
+        <form className="auth-form" onSubmit={handleSubmit}>
+          <h2>Create Account ✨</h2>
+          <p className="subtitle">Join us and order your favorite food</p>
 
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            placeholder="Enter your password"
-            required
-          />
-        </div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <button type="submit" className="form-btn">
-          Signup
-        </button>
-      </form>
+          <div className="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <button type="submit" className="auth-btn">
+            Signup
+          </button>
+
+          <p className="switch-text">
+            Already have an account?
+            <Link to="/login"> Login</Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 }

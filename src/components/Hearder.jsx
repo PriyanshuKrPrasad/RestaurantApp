@@ -176,7 +176,7 @@ const Header = () => {
   return (
     <>
       {/* PAGE SPACE FOR FIXED HEADER */}
-      <div style={{ height: '70px' }}></div>
+      <div style={{ height: '75px' }}></div>
 
       <header style={headerStyle}>
         <div style={navContainer}>
@@ -184,7 +184,7 @@ const Header = () => {
           {/* LOGO */}
           <div style={logoWrapper}>
             <img
-              src="/logo.png"
+              src="logo.png"
               alt="Logo"
               style={logoStyle}
             />

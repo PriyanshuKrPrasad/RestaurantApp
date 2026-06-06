@@ -415,6 +415,10 @@ body {
    RESPONSIVE DESIGN
 ========================= */
 
+/* =========================
+   RESPONSIVE DESIGN (BOOK TABLE STYLE)
+========================= */
+
 /* TABLET */
 @media (max-width: 900px) {
   .contact-container {
@@ -422,13 +426,13 @@ body {
   }
 
   .contact-image {
-    height: 300px;
+    height: 320px;
   }
 
   .contact-overlay {
+    padding: 40px;
     text-align: center;
     align-items: center;
-    padding: 40px;
   }
 
   .contact-overlay h1 {
@@ -448,30 +452,65 @@ body {
   }
 }
 
-/* MOBILE */
-@media (max-width: 480px) {
+/* MOBILE (EXACT SAME AS BOOK TABLE STYLE) */
+@media (max-width: 600px) {
+  .contact-container {
+    flex-direction: column; /* stack */
+  }
+
+  /* IMAGE TOP = 40vh */
+  .contact-image {
+    height: 40vh;
+    flex: none;
+  }
+
+  /* FORM BOTTOM = FULL AUTO HEIGHT */
+  .contact-form-section {
+    flex: none;
+    padding: 20px;
+  }
+
+  .contact-overlay {
+    padding: 15px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
   .contact-overlay h1 {
-    font-size: 28px;
+    font-size: 24px;
+    line-height: 1.2;
   }
 
   .contact-overlay p {
-    font-size: 14px;
+    font-size: 13px;
+    opacity: 0.85;
   }
 
   .contact-form {
-    padding: 22px;
-    border-radius: 18px;
+    width: 100%;
+    max-width: 100%;
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
 
   .contact-form h2 {
-    font-size: 26px;
+    font-size: 24px;
+    margin-bottom: 15px;
   }
 
   .form-btn {
     font-size: 16px;
+    padding: 12px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;
+    font-size: 14px;
   }
 }
-
 /* bookmytable */
 
 /* =========================
@@ -699,39 +738,41 @@ body {
 }
 
 /* =========================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (40/60 FIXED LAYOUT)
 ========================= */
 
 /* TABLET */
 @media (max-width: 900px) {
   .booking-container {
-    flex-direction: column;
+    flex-direction: row; /* ❌ remove column */
   }
 
   .booking-image {
-    height: 320px;
-  }
-
-  .booking-overlay {
-    padding: 40px;
-    text-align: center;
-    align-items: center;
-  }
-
-  .booking-overlay h1 {
-    font-size: 40px;
-  }
-
-  .booking-overlay p {
-    font-size: 16px;
+    flex: 0.4; /* 40% */
+    height: auto;
   }
 
   .booking-form-section {
-    padding: 30px 20px;
+    flex: 0.6; /* 60% */
+    padding: 20px;
+  }
+
+  .booking-overlay {
+    padding: 25px;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .booking-overlay h1 {
+    font-size: 34px;
+  }
+
+  .booking-overlay p {
+    font-size: 14px;
   }
 
   .booking-form {
-    padding: 30px;
+    padding: 25px;
   }
 
   .input-row {
@@ -740,26 +781,69 @@ body {
   }
 }
 
-/* MOBILE */
-@media (max-width: 480px) {
+
+
+/* =========================
+   MOBILE (IMAGE TOP, FORM BOTTOM, FULL FORM VISIBLE)
+========================= */
+
+@media (max-width: 600px) {
+  .booking-container {
+    flex-direction: column; /* stack vertically */
+  }
+
+  /* TOP IMAGE = 40% of viewport */
+  .booking-image {
+    flex: none;
+    height: 40vh;
+  }
+
+  /* FORM BOTTOM = auto height */
+  .booking-form-section {
+    flex: none;
+    padding: 20px;
+    background: #fff8f2;
+  }
+
+  /* Overlay adjustments */
+  .booking-overlay {
+    padding: 15px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
   .booking-overlay h1 {
-    font-size: 30px;
+    font-size: 22px;
+    line-height: 1.2;
   }
 
   .booking-overlay p {
     font-size: 14px;
+    opacity: 0.8;
   }
 
+  /* Form card */
   .booking-form {
-    padding: 22px;
-    border-radius: 18px;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
 
   .booking-form h2 {
-    font-size: 28px;
+    font-size: 24px;
+    margin-bottom: 15px;
   }
 
   .booking-btn {
     font-size: 16px;
+    padding: 12px;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 12px;
   }
 }

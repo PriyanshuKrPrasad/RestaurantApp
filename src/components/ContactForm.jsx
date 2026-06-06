@@ -17,10 +17,8 @@ function ContactForm() {
     e.preventDefault();
 
     console.log("Contact Data:", formData);
-
     alert("Message sent successfully!");
 
-    // Reset form after submit
     setFormData({
       name: "",
       email: "",
@@ -29,53 +27,65 @@ function ContactForm() {
   };
 
   return (
-    <div className="form-container">
-      <form className="form" onSubmit={handleSubmit}>
-        <h2>Contact Us</h2>
+    <div className="contact-container">
 
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Enter your name"
-            required
-          />
+      {/* LEFT SIDE */}
+      <div className="contact-image">
+        <div className="contact-overlay">
+          <h1>📞 Get in Touch</h1>
+          <p>
+            We are here to help you. Send us a message and we will respond quickly.
+          </p>
         </div>
+      </div>
 
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Enter your email"
-            required
-          />
-        </div>
+      {/* RIGHT SIDE FORM */}
+      <div className="contact-form-section">
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <h2>Contact Us</h2>
 
-        <div className="form-group">
-          <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Enter your message"
-            rows="4"
-            required
-          />
-        </div>
+          <div className="form-group">
+            <label>Name</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter your name"
+              required
+            />
+          </div>
 
-        <button type="submit" className="form-btn">
-          Send Message
-        </button>
-      </form>
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Message</label>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Enter your message"
+              rows="5"
+              required
+            />
+          </div>
+
+          <button type="submit" className="form-btn">
+            Send Message
+          </button>
+        </form>
+      </div>
+
     </div>
   );
 }

@@ -1,5 +1,6 @@
-/* Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+/* =========================
+   GLOBAL RESET
+========================= */
 
 * {
   margin: 0;
@@ -10,15 +11,22 @@
 
 body {
   background: #fff8f0;
+  overflow-x: hidden;
 }
 
-/* Main Container */
+/* =========================
+   AUTH CONTAINER
+========================= */
+
 .auth-container {
   display: flex;
   min-height: 100vh;
 }
 
-/* Left Image Section */
+/* =========================
+   LEFT IMAGE SECTION
+========================= */
+
 .auth-image {
   flex: 1;
   background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200")
@@ -26,6 +34,7 @@ body {
   position: relative;
 }
 
+/* Overlay */
 .overlay {
   position: absolute;
   inset: 0;
@@ -48,7 +57,10 @@ body {
   line-height: 1.6;
 }
 
-/* Right Form Section */
+/* =========================
+   RIGHT FORM SECTION
+========================= */
+
 .auth-form-section {
   flex: 1;
   display: flex;
@@ -58,7 +70,7 @@ body {
   padding: 40px;
 }
 
-/* Form Card */
+/* FORM CARD */
 .auth-form {
   width: 100%;
   max-width: 420px;
@@ -79,7 +91,10 @@ body {
   margin-bottom: 30px;
 }
 
-/* Input Fields */
+/* =========================
+   INPUT FIELDS
+========================= */
+
 .form-group {
   margin-bottom: 20px;
 }
@@ -99,7 +114,10 @@ body {
   box-shadow: 0 0 10px rgba(255, 107, 53, 0.2);
 }
 
-/* Button */
+/* =========================
+   BUTTON
+========================= */
+
 .auth-btn {
   width: 100%;
   padding: 15px;
@@ -118,7 +136,10 @@ body {
   transform: translateY(-2px);
 }
 
-/* Switch Text */
+/* =========================
+   SWITCH TEXT
+========================= */
+
 .switch-text {
   margin-top: 20px;
   text-align: center;
@@ -131,7 +152,11 @@ body {
   font-weight: 600;
 }
 
-/* Responsive */
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* TABLET */
 @media (max-width: 900px) {
   .auth-container {
     flex-direction: column;
@@ -141,25 +166,331 @@ body {
     height: 300px;
   }
 
+  .overlay {
+    padding: 30px;
+    text-align: center;
+  }
+
   .overlay h1 {
-    font-size: 40px;
+    font-size: 38px;
+  }
+
+  .overlay p {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .auth-form-section {
+    padding: 25px;
   }
 
   .auth-form {
     padding: 30px;
+    border-radius: 16px;
+  }
+
+  .auth-form h2 {
+    font-size: 28px;
   }
 }
 
+/* MOBILE */
+@media (max-width: 600px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-image {
+    height: 220px;
+  }
+
+  .overlay {
+    padding: 20px;
+  }
+
+  .overlay h1 {
+    font-size: 28px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  .auth-form-section {
+    padding: 15px;
+  }
+
+  .auth-form {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .auth-form h2 {
+    font-size: 24px;
+  }
+
+  .form-group input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .auth-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 400px) {
+  .overlay h1 {
+    font-size: 22px;
+  }
+
+  .overlay p {
+    font-size: 13px;
+  }
+
+  .auth-form h2 {
+    font-size: 20px;
+  }
+}
+
+/* contact  */
 
 /* =========================
-   BOOKING SECTION
+   CONTACT PAGE (BOOK TABLE STYLE)
 ========================= */
 
-.booking-container {
+.contact-container {
   display: flex;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
+  animation: pageFade 0.8s ease;
+}
+
+/* LEFT SIDE */
+.contact-image {
+  flex: 1;
+  background: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200")
+    center/cover no-repeat;
+  position: relative;
+  animation: zoomBg 12s infinite alternate ease-in-out;
+}
+
+.contact-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px;
+  animation: fadeInUp 1s ease;
+}
+
+.contact-overlay h1 {
+  font-size: 56px;
+  margin-bottom: 20px;
+  animation: slideDown 1s ease;
+}
+
+.contact-overlay p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 500px;
+  opacity: 0.9;
+}
+
+/* RIGHT SIDE */
+.contact-form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff8f2;
+  padding: 40px;
+}
+
+/* FORM CARD */
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 45px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  animation: formPop 0.8s ease;
+}
+
+.contact-form h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* FORM GROUP */
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* INPUTS */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ff6b35;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(255, 107, 53, 0.25);
+  transform: translateY(-2px);
+}
+
+/* BUTTON */
+.form-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff6b35, #ff914d);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes formPop {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomBg {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+@keyframes pageFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* TABLET */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-image {
+    height: 300px;
+  }
+
+  .contact-overlay {
+    text-align: center;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .contact-overlay h1 {
+    font-size: 38px;
+  }
+
+  .contact-overlay p {
+    font-size: 16px;
+  }
+
+  .contact-form-section {
+    padding: 25px;
+  }
+
+  .contact-form {
+    padding: 30px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .contact-overlay h1 {
+    font-size: 28px;
+  }
+
+  .contact-overlay p {
+    font-size: 14px;
+  }
+
+  .contact-form {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .contact-form h2 {
+    font-size: 26px;
+  }
+
+  .form-btn {
+    font-size: 16px;
+  }
+}
+
+/* bookmytable */
+
+/* =========================
+   BOOK TABLE FORM (RESPONSIVE + ANIMATION)
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* MAIN CONTAINER */
+.booking-container {
+  display: flex;
+  min-height: 100vh;
   overflow: hidden;
+  animation: pageFade 0.8s ease-in-out;
 }
 
 /* LEFT IMAGE SIDE */
@@ -168,9 +499,10 @@ body {
   background: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200")
     center/cover no-repeat;
   position: relative;
-  animation: zoomBg 15s infinite alternate ease-in-out;
+  animation: zoomBg 12s infinite alternate ease-in-out;
 }
 
+/* DARK OVERLAY */
 .booking-overlay {
   position: absolute;
   inset: 0;
@@ -180,19 +512,22 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 70px;
+  animation: fadeInUp 1s ease;
 }
 
 .booking-overlay h1 {
-  font-size: 60px;
+  font-size: 56px;
   margin-bottom: 20px;
+  line-height: 1.2;
   animation: slideDown 1s ease;
 }
 
 .booking-overlay p {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.7;
   max-width: 500px;
-  animation: fadeIn 2s ease;
+  opacity: 0.9;
+  animation: fadeIn 1.5s ease;
 }
 
 /* RIGHT FORM SIDE */
@@ -208,44 +543,47 @@ body {
 /* FORM CARD */
 .booking-form {
   width: 100%;
-  max-width: 550px;
-  background: white;
-  padding: 40px;
+  max-width: 600px;
+  background: #fff;
+  padding: 45px;
   border-radius: 25px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
   animation: formPop 0.8s ease;
 }
 
+/* HEADINGS */
 .booking-form h2 {
-  font-size: 38px;
+  font-size: 36px;
   color: #222;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .booking-subtitle {
   color: #777;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 /* SUCCESS MESSAGE */
 .success-message {
   background: #28a745;
   color: white;
-  padding: 14px;
-  border-radius: 12px;
+  padding: 12px;
+  border-radius: 10px;
   margin-bottom: 20px;
-  animation: fadeIn 0.5s ease;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
 }
 
-/* ROWS */
+/* ROW */
 .input-row {
   display: flex;
   gap: 15px;
 }
 
+/* INPUT GROUP */
 .form-group {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 /* INPUTS */
@@ -253,28 +591,34 @@ body {
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 16px;
+  padding: 14px;
   border: 2px solid #eee;
-  border-radius: 14px;
+  border-radius: 12px;
   font-size: 15px;
-  transition: 0.3s;
   background: #fafafa;
+  transition: all 0.3s ease;
+  outline: none;
 }
 
+/* FOCUS EFFECT */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: #ff6b35;
-  outline: none;
-  box-shadow: 0 0 15px rgba(255, 107, 53, 0.2);
+  background: #fff;
+  box-shadow: 0 0 12px rgba(255, 107, 53, 0.25);
   transform: translateY(-2px);
-  background: white;
+}
+
+/* TEXTAREA */
+.form-group textarea {
+  resize: none;
 }
 
 /* BUTTON */
 .booking-btn {
   width: 100%;
-  padding: 16px;
+  padding: 15px;
   border: none;
   border-radius: 14px;
   background: linear-gradient(135deg, #ff6b35, #ff914d);
@@ -282,15 +626,18 @@ body {
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.4s;
+  transition: all 0.3s ease;
 }
 
 .booking-btn:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.02);
   box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
 }
 
-/* ANIMATIONS */
+/* =========================
+   ANIMATIONS
+========================= */
+
 @keyframes formPop {
   from {
     opacity: 0;
@@ -313,182 +660,106 @@ body {
   }
 }
 
-@keyframes zoomBg {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.08);
-  }
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
 
-/* RESPONSIVE */
-@media (max-width: 950px) {
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomBg {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* TABLET */
+@media (max-width: 900px) {
   .booking-container {
     flex-direction: column;
   }
 
   .booking-image {
-    height: 350px;
+    height: 320px;
+  }
+
+  .booking-overlay {
+    padding: 40px;
+    text-align: center;
+    align-items: center;
   }
 
   .booking-overlay h1 {
-    font-size: 42px;
+    font-size: 40px;
+  }
+
+  .booking-overlay p {
+    font-size: 16px;
+  }
+
+  .booking-form-section {
+    padding: 30px 20px;
+  }
+
+  .booking-form {
+    padding: 30px;
   }
 
   .input-row {
     flex-direction: column;
     gap: 0;
   }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .booking-overlay h1 {
+    font-size: 30px;
+  }
+
+  .booking-overlay p {
+    font-size: 14px;
+  }
 
   .booking-form {
-    padding: 30px;
-  }
-}
-
-/* =========================
-   CONTACT FORM SECTION
-========================= */
-
-.form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #fff8f2, #ffe8dc);
-  font-family: "Poppins", sans-serif;
-  padding: 40px;
-  overflow: hidden;
-}
-
-/* FORM CARD */
-.form {
-  width: 100%;
-  max-width: 550px;
-  background: white;
-  padding: 45px;
-  border-radius: 25px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-  animation: formPop 0.8s ease;
-  position: relative;
-}
-
-/* HEADING */
-.form h2 {
-  font-size: 40px;
-  color: #222;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.form h2::after {
-  content: "";
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(135deg, #ff6b35, #ff914d);
-  display: block;
-  margin: 12px auto 0;
-  border-radius: 10px;
-}
-
-/* FORM GROUP */
-.form-group {
-  margin-bottom: 22px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* LABEL */
-.form-group label {
-  margin-bottom: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #444;
-}
-
-/* INPUTS & TEXTAREA */
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 16px;
-  border: 2px solid #eee;
-  border-radius: 14px;
-  font-size: 15px;
-  background: #fafafa;
-  transition: all 0.3s ease;
-  resize: none;
-}
-
-/* FOCUS EFFECT */
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #ff6b35;
-  outline: none;
-  background: white;
-  box-shadow: 0 0 15px rgba(255, 107, 53, 0.2);
-  transform: translateY(-2px);
-}
-
-/* PLACEHOLDER */
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: #aaa;
-}
-
-/* BUTTON */
-.form-btn {
-  width: 100%;
-  padding: 16px;
-  border: none;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #ff6b35, #ff914d);
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-/* BUTTON HOVER */
-.form-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
-}
-
-/* ANIMATIONS */
-@keyframes formPop {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
+    padding: 22px;
+    border-radius: 18px;
   }
 
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .form {
-    padding: 30px;
+  .booking-form h2 {
+    font-size: 28px;
   }
 
-  .form h2 {
-    font-size: 32px;
-  }
-
-  .form-container {
-    padding: 20px;
+  .booking-btn {
+    font-size: 16px;
   }
 }

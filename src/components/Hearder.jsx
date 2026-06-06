@@ -196,25 +196,14 @@ const Header = () => {
             <ul style={navListStyle}>
               {navItems.map((item, index) => (
                 <li key={index}>
-                  {item.href.startsWith("#") ? (
-  <a
-    href={item.href}
-    style={linkStyle}
-    onMouseEnter={hoverEnter}
-    onMouseLeave={hoverLeave}
-  >
-    {item.label}
-  </a>
-) : (
-  <Link
-    to={item.href}
-    style={linkStyle}
-    onMouseEnter={hoverEnter}
-    onMouseLeave={hoverLeave}
-  >
-    {item.label}
-  </Link>
-)}
+                  <a
+                    href={item.href}
+                    style={linkStyle}
+                    onMouseEnter={hoverEnter}
+                    onMouseLeave={hoverLeave}
+                  >
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -246,25 +235,18 @@ const Header = () => {
         {/* MOBILE MENU */}
         {isMobile && (
           <nav style={mobileNavStyle}>
-            {item.href.startsWith("#") ? (
-  <a
-    key={index}
-    href={item.href}
-    style={linkStyle}
-    onClick={() => setNavOpen(false)}
-  >
-    {item.label}
-  </a>
-) : (
-  <Link
-    key={index}
-    to={item.href}
-    style={linkStyle}
-    onClick={() => setNavOpen(false)}
-  >
-    {item.label}
-  </Link>
-)}
+            {navItems.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                style={linkStyle}
+                onClick={() => setNavOpen(false)}
+                onMouseEnter={hoverEnter}
+                onMouseLeave={hoverLeave}
+              >
+                {item.label}
+              </a>
+            ))}
 
             {/* MOBILE LOGIN / LOGOUT */}
             <button

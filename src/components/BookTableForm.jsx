@@ -112,6 +112,7 @@ function BookTableForm() {
               <input
                 type="date"
                 name="date"
+                placeholder="Book your Date"
                 value={formData.date}
                 onChange={handleChange}
                 required
@@ -122,6 +123,7 @@ function BookTableForm() {
               <input
                 type="time"
                 name="time"
+                placeholder="select your Time"
                 value={formData.time}
                 onChange={handleChange}
                 required
@@ -153,6 +155,7 @@ function BookTableForm() {
                 <option>Date Night</option>
                 <option>Business Meeting</option>
                 <option>Family Dinner</option>
+                <option>Other Something Special</option>
               </select>
             </div>
           </div>

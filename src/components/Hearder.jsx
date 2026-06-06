@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -56,7 +57,7 @@ const Header = () => {
   const headerStyle = {
     width: '100%',
     background: '#1a1a1a',
-    padding: '12px 25px',
+    padding: '10px 25px',
     boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
     position: 'fixed',
     top: 0,
@@ -195,14 +196,25 @@ const Header = () => {
             <ul style={navListStyle}>
               {navItems.map((item, index) => (
                 <li key={index}>
-                  <a
-                    href={item.href}
-                    style={linkStyle}
-                    onMouseEnter={hoverEnter}
-                    onMouseLeave={hoverLeave}
-                  >
-                    {item.label}
-                  </a>
+                  {item.href.startsWith("#") ? (
+  <a
+    href={item.href}
+    style={linkStyle}
+    onMouseEnter={hoverEnter}
+    onMouseLeave={hoverLeave}
+  >
+    {item.label}
+  </a>
+) : (
+  <Link
+    to={item.href}
+    style={linkStyle}
+    onMouseEnter={hoverEnter}
+    onMouseLeave={hoverLeave}
+  >
+    {item.label}
+  </Link>
+)}
                 </li>
               ))}
             </ul>
@@ -234,18 +246,25 @@ const Header = () => {
         {/* MOBILE MENU */}
         {isMobile && (
           <nav style={mobileNavStyle}>
-            {navItems.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                style={linkStyle}
-                onClick={() => setNavOpen(false)}
-                onMouseEnter={hoverEnter}
-                onMouseLeave={hoverLeave}
-              >
-                {item.label}
-              </a>
-            ))}
+            {item.href.startsWith("#") ? (
+  <a
+    key={index}
+    href={item.href}
+    style={linkStyle}
+    onClick={() => setNavOpen(false)}
+  >
+    {item.label}
+  </a>
+) : (
+  <Link
+    key={index}
+    to={item.href}
+    style={linkStyle}
+    onClick={() => setNavOpen(false)}
+  >
+    {item.label}
+  </Link>
+)}
 
             {/* MOBILE LOGIN / LOGOUT */}
             <button

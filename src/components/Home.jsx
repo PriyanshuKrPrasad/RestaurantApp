@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Hearder";
@@ -27,18 +28,18 @@ function Home() {
 
       <main className="main">
         <section
-  id="hero"
-  className="hero section light-background"
-  style={{
-    backgroundImage: `url(${heroBg})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    color: "white",
-    textShadow: "2px 2px 4px rgba(0,0,0,0.4)",
-  }}
->
-
+          id="hero"
+          className="hero section light-background"
+          style={{
+            backgroundImage: `url(${heroBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            color: "white",
+            // height: "900px",
+            textShadow: "2px 2px 4px rgba(0,0,0,0.4)",
+          }}
+        >
           <div className="container">
             <div className="row gy-4 justify-content-center justify-content-lg-between">
               {/* Left Section */}
@@ -86,34 +87,35 @@ function Home() {
                   }}
                 >
                   {/* BOOK TABLE BUTTON */}
-                  <a
-                    href="/book-table"
-                    style={{
-                      background: "linear-gradient(135deg, #ff6b6b, #ff9966)",
-                      color: "#fff",
-                      padding: "15px 35px",
-                      borderRadius: "50px",
-                      textDecoration: "none",
-                      fontWeight: "700",
-                      fontSize: "18px",
-                      letterSpacing: "0.5px",
-                      boxShadow: "0 8px 20px rgba(255, 107, 107, 0.4)",
-                      transition: "all 0.3s ease",
-                      border: "none",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.transform = "translateY(-5px) scale(1.05)";
-                      e.target.style.boxShadow =
-                        "0 12px 25px rgba(255, 107, 107, 0.6)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.transform = "translateY(0) scale(1)";
-                      e.target.style.boxShadow =
-                        "0 8px 20px rgba(255, 107, 107, 0.4)";
-                    }}
-                  >
-                    🍽 Book My Table
-                  </a>
+                  <Link
+  to="/book-table"
+  style={{
+    background: "linear-gradient(135deg, #ff6b6b, #ff9966)",
+    color: "#fff",
+    padding: "15px 35px",
+    borderRadius: "50px",
+    textDecoration: "none",
+    fontWeight: "700",
+    fontSize: "18px",
+    letterSpacing: "0.5px",
+    boxShadow: "0 8px 20px rgba(255, 107, 107, 0.4)",
+    transition: "all 0.3s ease",
+    border: "none",
+    display: "inline-block",
+  }}
+  onMouseEnter={(e) => {
+    e.target.style.transform = "translateY(-5px) scale(1.05)";
+    e.target.style.boxShadow =
+      "0 12px 25px rgba(255, 107, 107, 0.6)";
+  }}
+  onMouseLeave={(e) => {
+    e.target.style.transform = "translateY(0) scale(1)";
+    e.target.style.boxShadow =
+      "0 8px 20px rgba(255, 107, 107, 0.4)";
+  }}
+>
+  🍽 Book My Table
+</Link>
 
                   {/* WATCH VIDEO BUTTON */}
                   <a
@@ -258,7 +260,8 @@ function Home() {
                         related: [
                           {
                             name: "Butter Chicken",
-                            image: "https://masalaandchai.com/wp-content/uploads/2022/03/Butter-Chicken.jpg",
+                            image:
+                              "https://masalaandchai.com/wp-content/uploads/2022/03/Butter-Chicken.jpg",
                             price: "Rs. 220/-",
                           },
                           {
@@ -303,12 +306,14 @@ function Home() {
                         related: [
                           {
                             name: "Spring Rolls",
-                            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTur-66-aocCKge4Ty-ut8cXAGDUYlwSOFQfw&s",
+                            image:
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTur-66-aocCKge4Ty-ut8cXAGDUYlwSOFQfw&s",
                             price: "Rs. 120/-",
                           },
                           {
                             name: "Hakka Noodles",
-                            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHI6vHr6V8yiVoYNezh3ViC4ZcCD7U_0kuuw&s",
+                            image:
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHI6vHr6V8yiVoYNezh3ViC4ZcCD7U_0kuuw&s",
                             price: "Rs. 170/-",
                           },
                         ],
@@ -347,12 +352,14 @@ function Home() {
                         related: [
                           {
                             name: "Paneer Tikka",
-                            image: "https://www.cookwithmanali.com/wp-content/uploads/2015/07/Restaurant-Style-Recipe-Paneer-Tikka.jpg",
+                            image:
+                              "https://www.cookwithmanali.com/wp-content/uploads/2015/07/Restaurant-Style-Recipe-Paneer-Tikka.jpg",
                             price: "Rs. 200/-",
                           },
                           {
                             name: "Butter Chicken",
-                            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeqChkZ5vTJvTU-MXc9m_NTzoE2YyU_PW-ow&s",
+                            image:
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeqChkZ5vTJvTU-MXc9m_NTzoE2YyU_PW-ow&s",
                             price: "Rs. 220/-",
                           },
                         ],
@@ -391,7 +398,8 @@ function Home() {
                         related: [
                           {
                             name: "Spring Rolls",
-                            image: "https://www.tablefortwoblog.com/wp-content/uploads/2023/01/crispy-spring-rolls-recipe-photo-tablefortwoblog-12-scaled.jpg",
+                            image:
+                              "https://www.tablefortwoblog.com/wp-content/uploads/2023/01/crispy-spring-rolls-recipe-photo-tablefortwoblog-12-scaled.jpg",
                             price: "Rs. 120/-",
                           },
                           {
@@ -436,12 +444,14 @@ function Home() {
                         related: [
                           {
                             name: "Idli Sambar",
-                            image: "https://i0.wp.com/www.sharmiskitchen.com/wp-content/uploads/2021/03/Moong-Dal-Sambar.jpg?fit=1200%2C1800&ssl=1",
+                            image:
+                              "https://i0.wp.com/www.sharmiskitchen.com/wp-content/uploads/2021/03/Moong-Dal-Sambar.jpg?fit=1200%2C1800&ssl=1",
                             price: "Rs. 90/-",
                           },
                           {
                             name: "Medu Vada",
-                            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQrqMAJkT9GFcFlHyr4v49MfP58edoLlOwZA&s",
+                            image:
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQrqMAJkT9GFcFlHyr4v49MfP58edoLlOwZA&s",
                             price: "Rs. 110/-",
                           },
                         ],
@@ -464,7 +474,6 @@ function Home() {
                   </div>
                 </div>
 
-
                 <div className="col-lg-3 col-md-4 col-sm-6">
                   <div
                     className="menu-card shadow-lg"
@@ -479,7 +488,8 @@ function Home() {
                         related: [
                           {
                             name: "Mutton Tikka",
-                            image: "https://media-cdn.tripadvisor.com/media/photo-s/07/fd/45/12/bbq-nights.jpg",
+                            image:
+                              "https://media-cdn.tripadvisor.com/media/photo-s/07/fd/45/12/bbq-nights.jpg",
                             price: "Rs. 520/-",
                           },
                           {
@@ -507,7 +517,7 @@ function Home() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="col-lg-3 col-md-4 col-sm-6">
                   <div
                     className="menu-card shadow-lg"
@@ -516,13 +526,15 @@ function Home() {
                         name: "Mix Chawmin",
                         category: "nuddles",
                         price: "Rs. 350/-",
-                        image: "https://rosepng.com/wp-content/uploads/2024/10/s11728_chow_mein_isolated_on_white_background_-stylize_200_6a0d152a-33c3-4581-b799-746d2d291b91_1-photoroom.png",
+                        image:
+                          "https://rosepng.com/wp-content/uploads/2024/10/s11728_chow_mein_isolated_on_white_background_-stylize_200_6a0d152a-33c3-4581-b799-746d2d291b91_1-photoroom.png",
                         description:
                           "Authentic aromatic nuddles cooked with spices and juicy chicken pieces.",
                         related: [
                           {
                             name: "Vegetable Nuddles",
-                            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtC4-9q1W3bU58Pk2s08rAH-ttb9OuboA0Dw&s",
+                            image:
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtC4-9q1W3bU58Pk2s08rAH-ttb9OuboA0Dw&s",
                             price: "Rs. 120/-",
                           },
                           {
@@ -558,13 +570,15 @@ function Home() {
                         name: "Fish Curry plate",
                         category: "Rice",
                         price: "Rs. 250/-",
-                        image: "https://as2.ftcdn.net/jpg/17/39/53/51/1000_F_1739535198_ChujGCUDuQIyFkv9sHJrVQtZ4WQPTTs2.jpg",
+                        image:
+                          "https://as2.ftcdn.net/jpg/17/39/53/51/1000_F_1739535198_ChujGCUDuQIyFkv9sHJrVQtZ4WQPTTs2.jpg",
                         description:
                           "Authentic aromatic Fish Curry cooked with rich spices and juicy Fish pieces.",
                         related: [
                           {
                             name: "Fish Fried",
-                            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_3KQgjriPbqiLYUKHrlg9JlcC8PdvpciTzA&s",
+                            image:
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_3KQgjriPbqiLYUKHrlg9JlcC8PdvpciTzA&s",
                             price: "Rs. 200/-",
                           },
                           {
@@ -691,11 +705,7 @@ function Home() {
               </div>
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img
-                    src="res1.png"
-                    className="d-block w-100"
-                    alt="..."
-                  />
+                  <img src="res1.png" className="d-block w-100" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
                     <p>
@@ -705,11 +715,7 @@ function Home() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img
-                    src="res2.webp"
-                    className="d-block w-100"
-                    alt="..."
-                  />
+                  <img src="res2.webp" className="d-block w-100" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Second slide label</h5>
                     <p>
@@ -719,11 +725,7 @@ function Home() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img
-                    src="res3.jpg"
-                    className="d-block w-100"
-                    alt="..."
-                  />
+                  <img src="res3.jpg" className="d-block w-100" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Third slide label</h5>
                     <p>
@@ -817,7 +819,7 @@ function Home() {
               </h4>
               <div
                 id="carouselExampleIndicators"
-                class="carousel slide"
+                className="carousel slide"
                 data-bs-ride="carousel"
               >
                 <div class="carousel-indicators">
@@ -844,25 +846,13 @@ function Home() {
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img
-                      src="gal1.jpg"
-                      class="d-block w-100"
-                      alt="..."
-                    />
+                    <img src="gal1.jpg" class="d-block w-100" alt="..." />
                   </div>
                   <div class="carousel-item">
-                    <img
-                      src="gal2.jpg"
-                      class="d-block w-100"
-                      alt="..."
-                    />
+                    <img src="gal2.jpg" class="d-block w-100" alt="..." />
                   </div>
                   <div class="carousel-item">
-                    <img
-                      src="gal3.jpg"
-                      class="d-block w-100"
-                      alt="..."
-                    />
+                    <img src="gal3.jpg" class="d-block w-100" alt="..." />
                   </div>
                 </div>
                 <button
@@ -903,41 +893,38 @@ function Home() {
           </section>
         </div>
 
-            {/* Map Section */}
-<section id="map" className="map-section py-5">
-  <div className="container text-center">
-    <h2>Find Us</h2>
+        {/* Map Section */}
+        <section id="map" className="map-section py-5">
+          <div className="container text-center">
+            <h2>Find Us</h2>
 
-    <h4>
-      <span>Visit</span>
-      <span className="description-title"> Our Restaurant</span>
-    </h4>
+            <h4>
+              <span>Visit</span>
+              <span className="description-title"> Our Restaurant</span>
+            </h4>
 
-    <p className="mb-4">
-      Come and enjoy delicious food at our location in Kolkata.
-    </p>
+            <p className="mb-4">
+              Come and enjoy delicious food at our location in Kolkata.
+            </p>
 
-    <div className="map-container">
-      <iframe
-        title="Restaurant Location"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.846698170821!2d88.48198417475795!3d22.722595527672385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f8a20fd5c4d3cb%3A0x3c3cfd6d9b7c2f55!2sBarasat%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1716890000000!5m2!1sen!2sin"
-        width="100%"
-        height="450"
-        style={{
-          border: 0,
-          borderRadius: "20px",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
-        }}
-        allowFullScreen=""
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
-  </div>
-</section>
-
-
-
+            <div className="map-container">
+              <iframe
+                title="Restaurant Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.846698170821!2d88.48198417475795!3d22.722595527672385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f8a20fd5c4d3cb%3A0x3c3cfd6d9b7c2f55!2sBarasat%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1716890000000!5m2!1sen!2sin"
+                width="100%"
+                height="450"
+                style={{
+                  border: 0,
+                  borderRadius: "20px",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+                }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </section>
 
         {/* {Footer Section} */}
         <footer class="py-5 bg-dark text-white">

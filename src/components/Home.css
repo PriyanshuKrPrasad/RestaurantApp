@@ -180,14 +180,14 @@ p {
 }
 
 /* Hero Section */
-#hero {
+/* #hero {
   background-color: #fff;
   background-image: url('Homeimg1.png');
   background-size: cover;
   background-position: center;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
+} */
 
 #hero .container {
   display: flex;

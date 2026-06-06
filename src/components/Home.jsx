@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Hearder";
+import heroBg from "../assets/Homeimg1.png";
 
 function Home() {
   const [navOpen, setNavOpen] = useState(false);
@@ -25,7 +26,19 @@ function Home() {
       <Header />
 
       <main className="main">
-        <section id="hero" className="hero section light-background">
+        <section
+  id="hero"
+  className="hero section light-background"
+  style={{
+    backgroundImage: `url(${heroBg})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    color: "white",
+    textShadow: "2px 2px 4px rgba(0,0,0,0.4)",
+  }}
+>
+
           <div className="container">
             <div className="row gy-4 justify-content-center justify-content-lg-between">
               {/* Left Section */}
